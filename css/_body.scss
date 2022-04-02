@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $Very_dark-blue;
+    color: $Pale_Blue;
+    font-size: $Font_size-body;
+    font-family: $Font_family;
+}
+
+.grid__container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 190px);
+    grid-template-areas: 
+    "user__card     work        play    study"
+    "user__card     exercise    social  self__care";
+    gap: 1.6rem;
+    width: 80%;
+    margin: 7.5% auto;
+
+    section {
+        border-radius: $radius;
+    }
+}
+
+.user__card {
+    grid-area: user__card;
+}
+
+.user__card--top {
+
+    img {
+        width: 45%;
+        // height: auto;
+        border: 5px solid $color_letter;
+        border-radius: 50%;
+    }
+
+    p {
+        padding-top: 12px;
+    }
+
+
+    span {
+        display: block;
+    }
+}
+
+.user__card--logo {
+    background-color: $Blue;
+    border-radius: $radius;
+    font-size: 2rem;
+    padding: .75em;
+    position: relative;
+    z-index: 20;
+}
+
+.report__for {
+    font-size: 1rem;
+}
+
+.color__letter--white {
+    color: $color_letter;
+}
+
+.user__card--btm {
+
+    span {
+        padding: 10px 0;
+        display: block;
+
+        &:hover {
+            color: $color_letter;
+            cursor: pointer;
+        }
+    }
+}
+
+.user__card--fondo {
+    background-color: $Dark_blue;
+    border-radius: $radius;
+    padding: 2.8em 2rem .5rem 2rem;
+    font-size: 1.2rem;
+    position: relative;
+    top: -2.5rem;
+    z-index: 10;
+    // height: 57%;
+    height: auto;
+}
+
+.img__top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.grid__item {
+    position: absolute;
+    height: auto;
+    bottom: -2%;
+    background-color: $Dark_blue;
+    border-radius: $radius;
+    padding: 1.2rem 1.8rem;
+    width: 100%;
+
+    &:hover {
+        background-color: $Desaturated_blue;
+        cursor: pointer;
+    }
+}
+
+.grid__item--row1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+        color: $color_letter;
+    }
+}
+
+.grid__item--row2 {
+    p {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            padding-top: 10px;
+        }
+    }
+
+    .hour {
+        font-size: 2.5rem;
+        color: $color_letter;
+    }
+}
+
+.work {
+    grid-area: work;
+    background-color: $Light_red-work;
+    position: relative;
+    height: auto;
+}
+
+.play {
+    grid-area: play;
+    background-color: $Soft_blue-play;
+    position: relative;
+    height: auto;
+}
+
+.study {
+    grid-area: study;
+    background-color: $Light_red-study;
+    position: relative;
+    height: auto;
+}
+
+.exercise {
+    grid-area: exercise;
+    background-color: $Lime_green-exercise;
+    position: relative;
+    height: auto;
+}
+
+.social {
+    grid-area: social;
+    background-color: $Violet-social;
+    position: relative;
+    height: auto;
+}
+
+.self__care {
+    grid-area: self__care;
+    background-color: $Soft_orange-self-care;
+    position: relative;
+    height: auto;
+}
+
+@media screen and (max-width: 375px) {
+    .grid__container {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        grid-template-rows: 130px 35px 130px 130px 130px 130px 130px 130px;
+        grid-template-areas: 
+        "user__card"
+        "user__card"
+        "work"
+        "play"
+        "study"
+        "exercise"
+        "social"
+        "self__care";
+        gap: 20px;
+    }
+
+    .user__card {
+        margin-bottom: 40px;
+    }
+
+    .user__card--top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+            width: 30%;
+            height: 30%;
+            margin-right: 20px;
+        }
+    }
+
+    .report__for {
+        font-size: .8rem;
+    }
+
+    .name {
+
+        display: flex;
+        flex-direction: row;
+        
+        span {
+            padding-right: 10px;
+            font-size: 1rem;
+        }
+    }
+
+    .user__card--btm {
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span {
+            padding-left: 12px;
+            font-size: 1rem;
+
+            &:hover {
+                color: $color_letter;
+            }
+        }
+
+        .menu__active {
+            color: $color_letter;
+        }
+        
+    }
+
+    .grid__item--row2 {
+
+        p {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+    
+            span {
+                padding-top: 10px;
+                font-size: .8rem;
+            }
+        }
+    
+        .hour {
+            font-size: 1.5rem;
+        }
+    }
+
+    .grid__item {
+        bottom: 0%; 
+    }
+    
+}

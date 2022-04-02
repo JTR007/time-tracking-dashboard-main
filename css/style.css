@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&family=Quicksand&family=Rubik:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(226deg, 43%, 10%);
+  color: hsl(236deg, 100%, 87%);
+  font-size: 18px;
+  font-family: "Rubik";
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  grid-template-rows: repeat(2, 190px);
+  grid-template-areas: "user__card     work        play    study" "user__card     exercise    social  self__care";
+  gap: 1.6rem;
+  width: 80%;
+  margin: 7.5% auto;
+}
+.grid__container section {
+  border-radius: 1.6rem;
+}
+
+.user__card {
+  grid-area: user__card;
+}
+
+.user__card--top img {
+  width: 45%;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+.user__card--top p {
+  padding-top: 12px;
+}
+.user__card--top span {
+  display: block;
+}
+
+.user__card--logo {
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 1.6rem;
+  font-size: 2rem;
+  padding: 0.75em;
+  position: relative;
+  z-index: 20;
+}
+
+.report__for {
+  font-size: 1rem;
+}
+
+.color__letter--white {
+  color: white;
+}
+
+.user__card--btm span {
+  padding: 10px 0;
+  display: block;
+}
+.user__card--btm span:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.user__card--fondo {
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 1.6rem;
+  padding: 2.8em 2rem 0.5rem 2rem;
+  font-size: 1.2rem;
+  position: relative;
+  top: -2.5rem;
+  z-index: 10;
+  height: auto;
+}
+
+.img__top {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.grid__item {
+  position: absolute;
+  height: auto;
+  bottom: -2%;
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 1.6rem;
+  padding: 1.2rem 1.8rem;
+  width: 100%;
+}
+.grid__item:hover {
+  background-color: hsl(235deg, 45%, 61%);
+  cursor: pointer;
+}
+
+.grid__item--row1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.grid__item--row1 p {
+  color: white;
+}
+
+.grid__item--row2 p {
+  display: flex;
+  flex-direction: column;
+}
+.grid__item--row2 p span {
+  padding-top: 10px;
+}
+.grid__item--row2 .hour {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.work {
+  grid-area: work;
+  background-color: hsl(15deg, 100%, 70%);
+  position: relative;
+  height: auto;
+}
+
+.play {
+  grid-area: play;
+  background-color: hsl(195deg, 74%, 62%);
+  position: relative;
+  height: auto;
+}
+
+.study {
+  grid-area: study;
+  background-color: hsl(348deg, 100%, 68%);
+  position: relative;
+  height: auto;
+}
+
+.exercise {
+  grid-area: exercise;
+  background-color: hsl(145deg, 58%, 55%);
+  position: relative;
+  height: auto;
+}
+
+.social {
+  grid-area: social;
+  background-color: hsl(264deg, 64%, 52%);
+  position: relative;
+  height: auto;
+}
+
+.self__care {
+  grid-area: self__care;
+  background-color: hsl(43deg, 84%, 65%);
+  position: relative;
+  height: auto;
+}
+
+@media screen and (max-width: 375px) {
+  .grid__container {
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    grid-template-rows: 130px 35px 130px 130px 130px 130px 130px 130px;
+    grid-template-areas: "user__card" "user__card" "work" "play" "study" "exercise" "social" "self__care";
+    gap: 20px;
+  }
+
+  .user__card {
+    margin-bottom: 40px;
+  }
+
+  .user__card--top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .user__card--top img {
+    width: 30%;
+    height: 30%;
+    margin-right: 20px;
+  }
+
+  .report__for {
+    font-size: 0.8rem;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: row;
+  }
+  .name span {
+    padding-right: 10px;
+    font-size: 1rem;
+  }
+
+  .user__card--btm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .user__card--btm span {
+    padding-left: 12px;
+    font-size: 1rem;
+  }
+  .user__card--btm span:hover {
+    color: white;
+  }
+  .user__card--btm .menu__active {
+    color: white;
+  }
+
+  .grid__item--row2 p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .grid__item--row2 p span {
+    padding-top: 10px;
+    font-size: 0.8rem;
+  }
+  .grid__item--row2 .hour {
+    font-size: 1.5rem;
+  }
+
+  .grid__item {
+    bottom: 0%;
+  }
+}/*# sourceMappingURL=style.css.map */
